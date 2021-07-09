@@ -7,6 +7,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './Home'
 import Tickets from './Tickets'
+import Purchase from './Purchase'
+import Contact from './Contact'
 
 const Stack = createStackNavigator();
 
@@ -32,6 +34,26 @@ export default function App() {
           component={Tickets}
           options={{
             headerTitleAlign: 'center'
+          }}>
+
+          </Stack.Screen>
+
+          <Stack.Screen
+          name='Contact'
+          component={Contact}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'Contact Us'
+          }}>
+
+          </Stack.Screen>
+
+          <Stack.Screen
+          name='Purchase'
+          component={Purchase}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'Purchase'
           }}>
 
           </Stack.Screen>

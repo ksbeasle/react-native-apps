@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 import DB from './ticketsDB'
 import { useFonts } from 'expo-font';
 
-const Tickets = () => {
+const Tickets = ({navigation}) => {
     // console.log(DB)
 
     let [fontsLoaded] = useFonts({
@@ -35,9 +35,14 @@ const Tickets = () => {
                     <Text style={styles.price}>
                         {item.price}
                     </Text>
+                    <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Purchase', { eventId: item.eventId })
+                    }}>
                     <Text style={styles.buyButton}>
                         Get Ticket
                     </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
