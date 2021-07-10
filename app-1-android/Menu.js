@@ -18,6 +18,12 @@ const Menu = () => {
             style={styles.button}>
                 <Text>Contact Us</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={ () => navigation.navigate('News') }
+            style={styles.button}>
+                <Text>News</Text>
+            </TouchableOpacity>
         </View>
     )
 }

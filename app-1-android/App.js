@@ -9,6 +9,7 @@ import Home from './Home'
 import Tickets from './Tickets'
 import Purchase from './Purchase'
 import Contact from './Contact'
+import News from './News'
 
 const Stack = createStackNavigator();
 
@@ -54,6 +55,16 @@ export default function App() {
           options={{
             headerTitleAlign: 'center',
             headerTitle: 'Purchase'
+          }}>
+
+          </Stack.Screen>
+
+          <Stack.Screen
+          name='News'
+          component={News}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'News'
           }}>
 
           </Stack.Screen>
