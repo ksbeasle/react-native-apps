@@ -1,0 +1,1 @@
+use ```npx react-native run-ios``` to run
