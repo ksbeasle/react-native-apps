@@ -5,13 +5,15 @@ import styles from './styles/sharedStyles.js';
 
 function Story() {
   return (
-    <ScrollView 
-    style={styles.storyContainer} 
-    contentContainerStyle={styles.storyInnerContainer}
-    stickyHeaderIndices={[0, 1]}
-    indicatorStyle="white"
-    pagingEnabled={true}
-    ref={(a) => (this.scroll) = a}>
+    <ScrollView
+      ref={(a) => (this.scroll = a)}
+      style={styles.storyContainer}
+      contentContainerStyle={styles.storyInnerContainer}
+      stickyHeaderIndices={[0, 1]}
+      indicatorStyle="white"
+      pagingEnabled={true}
+      scrollsToTop={true}
+      bounces={true}>
       <Image
         style={styles.storyImageSmall}
         source={require('../images/shutterstock_211091626.png')}
@@ -21,115 +23,86 @@ function Story() {
           <Text style={styles.sectionTitleStory}>Our Story</Text>
           <Text style={styles.sectionDescriptionStory}>
             Conference by nerds for nerds!
-          </Text> 
+          </Text>
         </View>
       </View>
-
       <View style={styles.body}>
-      {/* <Pressable onPress={() => this.scroll.scrollToEnd({animated: true})}> Pressable doesn't work ????? */}
-            <Text style={styles.sectionDescriptionStory}>Go to End</Text>
-      {/* </Pressable> */}
+        <Pressable
+          onPress={() =>
+            this.scrollView.scrollToEnd({animated: true, duration: 500})
+          }>
+          <Text style={styles.sectionDescriptionStory}>Go To End</Text>
+        </Pressable>
         <Text style={styles.sectionDescriptionStory}>
-          $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        </Text>
-        <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
+          This is going to be a lengthy story on how this conference started
         </Text>
 
         <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
+          Ex amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
+          occaecat ex elit ex est.\nEsse enim nulla dolore sint incididunt enim
+          eu eu aute aliqua laboris deserunt eiusmod. Reprehenderit et proident
+          nisi laborum ex minim velit. Aliqua laboris et nulla laborum amet sint
+          irure ad tempor. Nulla do officia labore. Ut amet aute ex proident.
+          Enim sint aliqua occaecat voluptate adipisicing dolore proident Ex
+          amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
+        </Text>
+        <Text style={styles.sectionDescriptionStory}>
+          Ex amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
+          occaecat ex elit ex est.\nEsse enim nulla dolore sint incididunt enim
+          eu eu aute aliqua laboris deserunt eiusmod. Reprehenderit et proident
+          nisi laborum ex minim velit. Aliqua laboris et nulla laborum amet sint
+          irure ad tempor. Nulla do officia labore. Ut amet aute ex proident.
+          Enim sint aliqua occaecat voluptate adipisicing dolore proident Ex
+          amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
         </Text>
 
         <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
+          Ex amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
+          occaecat ex elit ex est.\nEsse enim nulla dolore sint incididunt enim
+          eu eu aute aliqua laboris deserunt eiusmod. Reprehenderit et proident
+          nisi laborum ex minim velit. Aliqua laboris et nulla laborum amet sint
+          irure ad tempor. Nulla do officia labore. Ut amet aute ex proident.
+          Enim sint aliqua occaecat voluptate adipisicing dolore proident Ex
+          amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
         </Text>
-
         <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
+          Ex amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
+          occaecat ex elit ex est.\nEsse enim nulla dolore sint incididunt enim
+          eu eu aute aliqua laboris deserunt eiusmod. Reprehenderit et proident
+          nisi laborum ex minim velit. Aliqua laboris et nulla laborum amet sint
+          irure ad tempor. Nulla do officia labore. Ut amet aute ex proident.
+          Enim sint aliqua occaecat voluptate adipisicing dolore proident Ex
+          amet elit anim qui consectetur fugiat consequat dolor occaecat.
+          Pariatur eu duis dolore do commodo nisi consequat enim est pariatur
+          eiusmod adipisicing esse labore ut. Laborum et ex aliqua esse Lorem
+          aliqua. Mollit nulla nostrud enim ut proident commodo deserunt
         </Text>
-
-        <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
-        </Text>
-
-        <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
-        </Text>
-
-        <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
-        </Text>
-
-        <Text style={styles.sectionDescriptionStory}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis viverra scelerisque. 
-        Aenean nec velit sollicitudin, rhoncus tortor nec, facilisis arcu. Nullam id lacus consectetur, 
-        pellentesque magna id, porttitor metus. Pellentesque imperdiet rhoncus interdum. Phasellus non enim 
-        facilisis, porta purus nec, imperdiet orci. Class aptent taciti sociosqu ad litora torquent per conubia 
-        nostra, per inceptos himenaeos. Cras imperdiet dolor lacus, vitae dapibus tortor porttitor tincidunt. 
-        Donec orci libero, bibendum eget massa vitae, suscipit sodales lacus. 
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Praesent egestas, est quis fringilla aliquet, ligula nulla hendrerit mauris, a feugiat sem tortor nec lacus. 
-        Nulla nec cursus nisi.
-        </Text>
-
-        <Text style={styles.sectionDescriptionStory}>End of this Story!</Text>
-
+        <Text style={styles.sectionDescriptionStory}>End of this story!</Text>
+        <Pressable
+          onPress={() => this.scrollView.scrollTo({x: 0, y: 0, animated: true})}>
+          <Text style={styles.sectionDescriptionStory}>Go to Top</Text>
+        </Pressable>
       </View>
     </ScrollView>
   );

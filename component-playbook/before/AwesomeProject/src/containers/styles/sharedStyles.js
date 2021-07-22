@@ -90,4 +90,16 @@ export default StyleSheet.create({
     color: 'black',
     textAlign: 'center',
   },
+  separatorStyle: {
+    height: 1,
+    backgroundColor: 'lightsalmon',
+    paddingTop: 2,
+    marginTop: 25
+  }, 
+  headerImage: {
+    width: '100%',
+    height: 250,
+    resizeMode: 'cover',
+
+  }
 });
