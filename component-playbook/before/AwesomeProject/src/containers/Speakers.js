@@ -2,6 +2,8 @@ import React from 'react';
 import {Text, View, FlatList, Image} from 'react-native';
 import {speakers}  from '../data/speakers.json'
 import styles from '../containers/styles/sharedStyles'
+import { Footer } from '../components/footer'
+import { Header } from '../components/header'
 
 function Speakers() {
   return (
@@ -37,29 +39,11 @@ const SpeakerList = ({id, name, bio}) => {
 }
 
 const HeaderComponent = () => {
-  return (
-    <View style={styles.sectionContainer}>
-
-      <Image 
-      style={styles.headerImage}
-      source={require('../images/girl.png')}/>
-
-      <Text style={styles.sectionDescription}>Awesome SPEAKERS !!!</Text>
-
-    </View>
-  )
+  return <Header image={require('../images/G.png')} heading={'SHMONEY$$$!'} style={styles.sectionTitleGreen}/>
 }
 
 const FooterComponent = () => {
-  return (
-    <View>
-      <Image style={styles.footerImage} source={require('../images/G.png')}/>
-      <Text style={styles.sectionDescription}>
-        {' '}
-        All Rights reserved BLAH BLAH BLAH
-      </Text>
-    </View>
-  )
+  return <Footer />
 }
 
 const SeparatorComponent = () => {

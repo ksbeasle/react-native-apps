@@ -1,7 +1,9 @@
-import React from 'react';
-import {Text, View, SectionList, Image} from 'react-native';
+import React, { useState } from 'react';
+import {Text, View, SectionList, Image, TouchableOpacity} from 'react-native';
 import { sessions } from '../data/sessions.json'
 import styles from './styles/sharedStyles'
+import { Footer } from '../components/footer'
+import { Header } from '../components/header'
 
 function Sessions() {
   return (
@@ -27,12 +29,24 @@ const renderSectionHeader = ({section}) => {
   )
 }
 
-const SessionList = ({id, name, speaker, desc}) => {
+const SessionList = (props) => {
+
+  const [moreInfo, setInfo] = useState(false)
+
   return (
-    <View key={id} style={styles.sectionContainer}>
-      <Text style={styles.headerTitle}>{'Session' + name}</Text>
-      <Text style={styles.sectionDescription}>{'Details' + desc}</Text>
-      <Text style={styles.sectionDescription}>{'Speaker' + speaker}</Text>
+    <View key={props.id} style={styles.sectionContainer}>
+      <Text style={styles.headerTitle}>{'Session' + props.name}</Text>
+      <Text style={styles.sectionDescription}>{'Speaker ' + props.speaker}</Text>
+      <TouchableOpacity onPress={() => setInfo(!moreInfo)}>
+      <Text style={styles.clickMe}> { moreInfo ? 'Hide info' : 'Click for more details' }</Text>
+      </TouchableOpacity>
+      {moreInfo && (
+      <> 
+      <Text style={styles.sectionDescription}>{'Details ' + props.desc}</Text>
+      <Text style={styles.sectionDescription}>{'Level ' + props.level}</Text>
+      <Text style={styles.sectionDescription}>{'ROOOM ' + props.room}</Text>
+      </>
+      )}
     </View>
   )
 }
@@ -45,6 +59,8 @@ const renderItem = ({item, index}) => {
       name={item.title}
       desc={item.description}
       speaker={item.speakers[0].name}
+      level={item.level}
+      room={item.room}
       />
     </View>
   )
@@ -52,29 +68,11 @@ const renderItem = ({item, index}) => {
 
 
 const HeaderComponent = () => {
-  return (
-    <View style={styles.sectionContainer}>
-
-      <Image 
-      style={styles.headerImage}
-      source={require('../images/girl.png')}/>
-
-      <Text style={styles.sectionDescription}>Awesome SeSSSIONSONSONSOSN !!!</Text>
-
-    </View>
-  )
+  return <Header image={require('../images/sec2.jpg')} heading={'AWESOME SESH!'} style={styles.sectionTitle}/>
 }
 
 const FooterComponent = () => {
-  return (
-    <View>
-      <Image style={styles.footerImage} source={require('../images/G.png')}/>
-      <Text style={styles.sectionDescription}>
-        {' '}
-        All Rights reserved BLAH BLAH BLAH
-      </Text>
-    </View>
-  )
+  return <Footer />
 }
 
 const SeparatorComponent = () => {

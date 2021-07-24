@@ -39,11 +39,22 @@ export default StyleSheet.create({
     fontWeight: '600',
     color: 'black',
   },
+  sectionTitleGreen: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'green',
+  },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
     color: 'black',
+  },
+  clickMe: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: 'green',
   },
   sectionTitleStory: {
     fontSize: 24,
