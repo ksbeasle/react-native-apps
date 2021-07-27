@@ -50,6 +50,45 @@ export default StyleSheet.create({
     fontWeight: '400',
     color: 'black',
   },
+  container: {
+    height: 53,
+    width: 450,
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  sectionDescriptionBold: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '900',
+    color: 'black',
+  },
+  clearContainer: {
+    backgroundColor: 'white',
+    flexDirection: 'column',
+    paddingRight: 50,
+    paddingBottom: 1,
+    justifyContent: 'center',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10
+  },
+  clearImage: {
+    height: 20,
+    width: 20
+  },
+  searchInput: {
+    backgroundColor: 'white',
+    flex: 1,
+    paddingBottom: 10,
+    paddingTop: 15,
+    paddingLeft: 20,
+    flexDirection: 'column',
+    color: 'black',
+    lineHeight: 20,
+    letterSpacing: 0,
+    fontSize: 20,
+    justifyContent: 'center'
+  },
   clickMe: {
     marginTop: 8,
     fontSize: 18,
