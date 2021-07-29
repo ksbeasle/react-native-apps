@@ -41,26 +41,30 @@ export const ConcertListItem = ({navigation, item}) => {
 const styles = StyleSheet.create({
 	item: {
 		// padding: 10,
-		height: 44,
+		// height: 44,
+		flex: 1,
+		flexDirection: "row",
 		borderBottomWidth: 'lightsteelblue',
 		borderBottomWidth: StyleSheet.hairlineWidth
 	},
 	tab: {
-		width: 68,
+		// width: 68,
+		flex: 1,
 		backgroundColor: 'black',
 		padding: 12,
-		position: 'absolute',
-		left: 0
+		// position: 'absolute',
+		// left: 0
 	},
 	tabCenter: {
-		width: 272,
+		flex: 5,
+		// width: 272,
 		padding: 12,
-		position: 'absolute',
-		right: 0
+		// position: 'absolute',
+		// right: 0
 	},
 	tabText: {
 		color: 'white',
-		fontSize: 14,
+		fontSize: "2vh",
 		whiteSpace: 'nowrap'
 	}
 })

@@ -10,31 +10,33 @@ export const HomeScreen = ({navigation})=>{
 
     return (
         <View style={styles.container}>
+			<View style={styles.homeBody}>
+					<ScrollView>
 
-				  <ScrollView>
+						<SectionList
+							sections={defaultState} 
+							renderItem={({item}) => (
+							
+								<ConcertListItem item={item} navigation={navigation}/> 
+							
+							)}
+							renderSectionHeader={({section}) => (
 
-                	<SectionList
-	                    sections={defaultState} 
-						renderItem={({item}) => (
-						
-							<ConcertListItem item={item} navigation={navigation}/> 
-						
-						)}
-                  		renderSectionHeader={({section}) => (
+								<Text style={styles.sectionHeader}>
+									{section.title}
+								</Text>
 
-                      		<Text style={styles.sectionHeader}>
-                        		{section.title}
-                      		</Text>
+							)}/>
 
-						)}/>
+					</ScrollView>
+				</View>
+				<View style={styles.homeFooter}>
+					<Text>
 
-            	</ScrollView>
-      
-				<Text>
+						(C)2020 Globoticket
 
-              		(C)2020 Globoticket
-
-        		</Text>
+					</Text>
+				</View>
 
 		</View>
 	)
@@ -45,7 +47,14 @@ export const HomeScreen = ({navigation})=>{
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: 'white',
-		height: 470
+		// height: 470
+		flex: 1
+	},
+	homeBody: {
+		flex: 15
+	},
+	homeFooter: {
+		flex: 1
 	},
 	sectionHeader: {
 		paddingTop: 2,
