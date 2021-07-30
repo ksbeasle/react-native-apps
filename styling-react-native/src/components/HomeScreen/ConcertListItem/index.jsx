@@ -22,7 +22,7 @@ export const ConcertListItem = ({navigation, item}) => {
 
 				<View style={styles.tabCenter}>
 
-					<Text>
+					<Text style={styles.tabCenterText}>
 
 						{item.name}
 
@@ -49,9 +49,11 @@ const styles = StyleSheet.create({
 	},
 	tab: {
 		// width: 68,
-		flex: 1,
+		flex: 2,
 		backgroundColor: 'black',
-		padding: 12,
+		justifyContent: "center",
+		alignItems: "center"
+		// padding: 12,
 		// position: 'absolute',
 		// left: 0
 	},
@@ -61,6 +63,9 @@ const styles = StyleSheet.create({
 		padding: 12,
 		// position: 'absolute',
 		// right: 0
+	},
+	tabCenterText: {
+		fontSize: "2vh"
 	},
 	tabText: {
 		color: 'white',
