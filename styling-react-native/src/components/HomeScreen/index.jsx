@@ -8,6 +8,11 @@ import { ConcertListItem } from './ConcertListItem';
 
 export const HomeScreen = ({navigation})=>{
 
+	const interactionHanlder = (item) => {
+		// console.log('HANDLER')
+		navigation.navigate("Details", {item})
+	}
+
     return (
         <View style={styles.container}>
 			<View style={styles.homeBody}>
@@ -17,7 +22,7 @@ export const HomeScreen = ({navigation})=>{
 							sections={defaultState} 
 							renderItem={({item}) => (
 							
-								<ConcertListItem item={item} navigation={navigation}/> 
+								<ConcertListItem item={item} navigation={navigation} handleInteraction={interactionHanlder}/> 
 							
 							)}
 							renderSectionHeader={({section}) => (
